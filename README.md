@@ -34,7 +34,7 @@ insert the following custom command into your [lazygit](https://github.com/jesse
 customCommands:
       - key: "<c-a>" # ctrl + a
         description: "pick AI commit"
-        command: 'echo "{{.Form.Msg}}" > /tmp/commit_msg && git commit -F /tmp/commit_msg && rm /tmp/commit_msg'
+        command: "cat << 'EOF' | git commit -F -\n{{.Form.Msg}}\nEOF"
         context: "files"
         prompts:
           - type: "menuFromCommand"
