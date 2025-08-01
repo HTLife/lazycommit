@@ -82,7 +82,6 @@ export async function run(options: RunOptions, templateName?: string) {
   }
 
   if (diff.trim().length === 0) {
-    console.error(`No changes to commit in ${target_dir}`);
     process.exit(1);
   }
 
